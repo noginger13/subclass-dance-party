@@ -24,12 +24,12 @@ describe('bouncyDancer', function() {
       sinon.spy(bouncyDancer, 'step');
       expect(bouncyDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps);
-      console.log(bouncyDancer.step.callCount);
+      clock.tick(timeBetweenSteps);
 
-      expect(bouncyDancer.step.callCount).to.be.equal(200);
+      expect(bouncyDancer.step.callCount).to.be.equal(1);
 
       clock.tick(timeBetweenSteps);
-      expect(bouncyDancer.step.callCount).to.be.equal(400);
+      expect(bouncyDancer.step.callCount).to.be.equal(2);
     });
   });
 });

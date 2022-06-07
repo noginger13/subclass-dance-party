@@ -7,6 +7,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
     setTimeout(this.step.bind(this), timeBetweenSteps);
+
   };
   this.step();
   // now that we have defined the this object, we can start setting up important parts of it by calling the methods we wrote
@@ -14,10 +15,15 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.setPosition = function(top, left) {
     // Use css top and left properties to position our <span> tag
     // where it belongs on the page. See http://api.jquery.com/css/
-    //
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random() * 255);
+    var randomColor = 'rgb(' + r + ',' + g + ',' + b + ')';
     var styleSettings = {
       top: top,
-      left: left
+      left: left,
+      'border-color': randomColor
+
     };
     this.$node.css(styleSettings);
   };

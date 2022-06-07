@@ -24,12 +24,12 @@ describe('popDancer', function() {
       sinon.spy(popDancer, 'step');
       expect(popDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps);
-      console.log(popDancer.step.callCount);
+      clock.tick(timeBetweenSteps);
 
-      expect(popDancer.step.callCount).to.be.equal(200);
+      expect(popDancer.step.callCount).to.be.equal(1);
 
       clock.tick(timeBetweenSteps);
-      expect(popDancer.step.callCount).to.be.equal(400);
+      expect(popDancer.step.callCount).to.be.equal(2);
     });
   });
 });
