@@ -25,6 +25,20 @@ var Dancer = function(top, left, timeBetweenSteps) {
       'border-color': randomColor
 
     };
+    this.lineUp = function() {
+      var styleSettings = {
+        left: 0
+      };
+      this.$node.css(styleSettings);
+    };
+
+    this.interact = function(left) {
+      var styleSettings = {
+        left: left
+      };
+      this.$node.css(styleSettings);
+    };
+
     this.$node.css(styleSettings);
   };
   this.setPosition(top, left);

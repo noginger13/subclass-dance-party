@@ -26,9 +26,34 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    $(dancer.$node).addClass(dancerMakerFunction);
+    // $(dancer.$node).addClass(dancerMakerFunction);
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
 
+  $('.repositionButton').on('click', function(event) {
+    var dancerMakerFunctionName = $(this).data('dancerMakerFunctionName');
+    var dancerMakerFunction = window[dancerMakerFunctionName];
+    window.dancers.forEach(function(dancer) {
+      dancer.lineUp();
+    });
+  });
+  $('.interactButton').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i += 2) {
+      var dancerOne = window.dancers[i];
+      var dancerOnePos = dancerOne.$node.position().left;
+      var dancerTwo = window.dancers[i + 1];
+      if (window.dancers[i + 1] === undefined) {
+        var dancerTwoPos = 0;
+      } else {
+        var dancerTwoPos = dancerTwo.$node.position().left;
+      }
+      var moveDistance = Math.abs(dancerOnePos - dancerTwoPos) / 2;
+      console.log({dancerOnePos, dancerTwoPos, moveDistance});
+      if (dancerOnePos > dancerTwoPos) {
+        dancerOne.interact(dancerOnePos + moveDistance);
+      }
+    }
   });
 });
 

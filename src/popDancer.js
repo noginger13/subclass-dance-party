@@ -2,7 +2,7 @@ var PopDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
-  this.$node = $('<span class="dancer PopDancer"><img src="Pics of dancer/orlando.jpeg" width="100" height="100"></span>');
+  this.$node = $('<span class="dancer PopDancer"><img src="dancerpics/orlando.jpeg" width="100" height="100"></span>');
   var oldStep = this.step;
   this.step = function() {
     // call the old version of step at the beginning of any call to this new version of step

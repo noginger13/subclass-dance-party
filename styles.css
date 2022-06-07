@@ -3,7 +3,10 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url("dancerpics/bkgd.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -25,12 +28,7 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
-
-.BlinkyDancer{
-}
-
-.BouncyDancer{
-}
-
-.PopDancer{
+.PopDancer:hover{
+  border-color: white;
+  border-radius: 50px;
 }
